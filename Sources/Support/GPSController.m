@@ -1165,8 +1165,9 @@ NSInteger ss(char* inp, char* outp)
             } else
             {
                 //DBNSLog(@"GPS device is open");
-                ttyset.c_ispeed = B4800;
-                ttyset.c_ospeed = B4800;
+                ttyset.c_ispeed = B38400;
+                ttyset.c_ospeed = B38400;
+                DBNSLog(@"GPS device ispeed=%lu, ospeed=%lu", ttyset.c_ispeed, ttyset.c_ospeed);
                 
                 ttyset.c_cflag |=       CRTSCTS;    // hadware flow on
                 ttyset.c_cflag &=       ~PARENB;    // no parity
